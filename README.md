@@ -1,4 +1,4 @@
-## Awesome websites built using Hugo and Bootstrap and deployed using Wercker. 
+## Awesome websites built using Hugo, Bootstrap, Google Material Design and Wercker to deploy on AWS S3 
 
 ### Prerequisites
 *These steps are one time and it is assumed that you are using MacOS*
@@ -29,7 +29,10 @@ For static websites, which change frequently, don't need heavy software like Wor
   
   This will create a local copy of the website template in the folder `site-1` 
 
-The website has the following structure. 
+
+Open the Website in **Atom** or any other editor.
+The website has the following structure.
+
 *Note: If you don't have tree, install tree using `brew install tree`
 
     $cd site-1
@@ -90,9 +93,54 @@ As soon as you save, Hugo will automatically refresh the website.
 
 Check the website in the browser window with the new Title, description etc. 
 
-### Step 4: Change the Logo
+### Step 4: Finalize your layout, images, content with the customer
 
-### Step 5: Change the Top Level Menu
+In this step you will get all the images, content, logo from the customer and finalize the layout with your customer. Assuming you have already done that proceed to Step 5
+
+### Step 5: Change the Logo and Images
+
+The logo and all images are stored in the static/img folder
+The logo shown in the front page is based on the config.toml's **customer** parameter
+
+      customer = "lologo"
+
+This is configured in the layouts/partials/header.html file 
+
+      <div class="vert-text">
+      <!--logo start-->
+         {{if .Site.Params.customer}}
+            <a href="#intro"><img src="{{.Site.BaseURL}}/img/{{.Site.Params.customer}}.png" class="logo" alt="logo"> </a>
+         {{end}}
+
+Let's say you customer name is petstore (all lowercase). Create a logo file `petstore.png` and drop it in the `img` folder
+
+Similarly all images from the customer which are going to be used throughout the content will be stored in the `img` folder (more later when we build the content)
+
+
+### Step 6: Change the Top Level Menu
+
+The top level menu is configured in the `layout/partials/header.html`
+
+### Step 8: Change the Rest of Header
+
+The header is configured in the `layout/partials/header.html`
+
+### Step 7: Change the Footer
+
+The footer is configured in the `layout/partials/footer.html`
+Here you can add the twitter, github, facebook, instagram, snapchat social media icons 
+
+         <li><a href="https://twitter.com/{{.Site.Params.twitter}}" class="icon-twitter icon-2x"></a></li>
+         <li><a href="https://github.com/{{.Site.Params.github}}" class="icon-octocat icon-2x"></a></li>
+
+The values for the social media icons are from the config.toml
+Edit the config.toml to add social media handles
+
+         twitter = "f9lo" # optional
+         github = "f9lo"
+
+The icons for the social media are stored in the hugofont.css 
+For icons which are not available in hugofont.css, refer to step 6 for using Google and BootStrap fonts. 
 
 ### Step 5: Change and Add new content
 
