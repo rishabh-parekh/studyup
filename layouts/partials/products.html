@@ -1,0 +1,18 @@
+{{ $baseurl := .Site.BaseURL }}
+{{ range where .Data.Pages "Type"  "Products" }}
+<div id="products" class="point">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 text-center">
+          <i class="point-icon icon-tux"></i>
+          <i class="point-icon icon-apple"></i>
+          <i class="point-icon icon-windows8"></i>
+        <h2>{{ .Title }}</h2>
+        <div class="lead">
+          {{ .Content }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}

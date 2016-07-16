@@ -1,0 +1,16 @@
+{{ $baseurl := .Site.BaseURL }}
+{{ range where .Data.Pages "Type"  "Home" }}
+<div id="about" class="counterpoint">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 text-center">
+        <i class="lead-icon icon-pacman"></i>
+        <h2>{{ .Title }}</h2>
+        <div class="lead">
+          {{ .Content }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{ end }}
