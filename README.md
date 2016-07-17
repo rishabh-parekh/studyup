@@ -452,10 +452,76 @@ You can download new themes for Hugo from [http://themes.gohugo.io/] (http://the
 
 The next step is to publish your website. You can save you website to Git Source control.
 
+In step 1, you have already cloned this repo using the command
+    $git clone https://github.com/rishabh-parekh/liftoff.git site-1
+
+Create a new repository in https://github.com/<your user name> called as site-1
+
+Next, add these changes to the new repo
+
+      $git add .
+      $git commit -m "Initial Commit of the new site-1"
+      $git push https://rishabh-parekh@github.com/rishabh-parekh/site-1 master
+
+This will add all the files under user name rishabh-parekh/site-1
+
 
 ### Step 17: Create a Wercker App and Target
 
-### Step 15: Change the Wercker.yml to deploy it automatically
+The next step is to build this final site and deploy it automatically if any content changes.
+
+[http://doc.lijun.li/web-hugo-aws-s3-wercker.html] (http://doc.lijun.li/web-hugo-aws-s3-wercker.html)
+
+For this we will use wercker [wercker.com](www.wercker.com)
+
+Create a wercker account and link it to your github. This is a one time Prerequisites.
+
+Login to the wercker dashboard and create a new app [https://app.wercker.com/#applications/create](https://app.wercker.com/#applications/create)
+
+
+Wercker will guide you through the steps, of auto configuration. Use the defaults for checking out the code.
+
+### Step 18: Create a AWS S3 bucket to host your website
+
+Login to AWS Console [https://console.aws.amazon.com](https://console.aws.amazon.com)
+
+Create a new s3 bucket at [https://console.aws.amazon.com/s3/home?region=us-east-1] (https://console.aws.amazon.com/s3/home?region=us-east-1)
+
+Name the new s3 bucket the same name as the site you want launch
+
+<img src="/img/internal/aws-1.png" alt="AWS Config" style="width: 100%;"/>
+
+
+### Step 15: Change the Wercker Config to deploy it automatically
+We have a wercker.yml file already included in the template repository.
+
+      box: debian
+      build:
+        steps:
+          - arjen/hugo-build:
+              version: "0.15"
+
+      deploy:
+        steps:
+          - s3sync:
+              key-id: $AWS_ACCESS_S3_KEY_ID
+              key-secret: $AWS_ACCESS_S3_KEY_SECRET
+              bucket-url: $AWS_S3_BUCKET_URL
+              source_dir: public/
+              opts: --acl-public --add-header=Cache-Control:max-age=3600
+
+This wercker file takes the Environment variables defined in the Wercker Project.
+
+The three AWS parameters in the Wercker Environment Variables. `AWS_ACCESS_S3_KEY_ID,AWS_ACCESS_S3_KEY_SECRET,AWS_S3_BUCKET_URL`
+
+<img src="/img/internal/wercker-1.png" alt="Wercker Config" style="width: 100%;"/>
 
 
 ### Step 18: Kick start and watch you website
+
+You are ready to kick start you website.
+
+Open the browser and bring up the AWS_S3_BUCKET_URL
+
+You can give a proper domain name using the instructions here
+[https://docs.aws.amazon.com/AmazonS3/latest/dev/website-hosting-custom-domain-walkthrough.html#website-hosting-custom-domain-walkthrough-domain-registry] (https://docs.aws.amazon.com/AmazonS3/latest/dev/website-hosting-custom-domain-walkthrough.html#website-hosting-custom-domain-walkthrough-domain-registry)
