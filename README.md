@@ -120,12 +120,11 @@ Similarly all images from the customer which are going to be used throughout the
 ### Step 6: Change the Top Level Menu
 
 The top level menus are configured in the `layout/partials/header.html`
-The menus in the template are `about`, `products`, `approach`, `customers`, `team`, `contact`, `blog`
-You can add new menus, delete menus, or change existing existing. 
+The menus in the template are `about`, `products`, `approach`, `customers`, `team`, `contact`, `blog`. You can add new menus, delete menus, or change existing existing. 
 
 Each menu has icons. By default the Hugo Icons which are configured in layout/css/hugofont.css
-You can use Google Icons from the [Google Material Icons](https://design.google.com/icons/)
-Uncomment the Menu using Google Style Icons, and comment out Menus using Hugo Style Icon.
+
+You can use Google Icons from the [Google Material Icons](https://design.google.com/icons/). Uncomment the Menu using Google Style Icons, and comment out Menus using Hugo Style Icon.
 
 The Google Icons use Style Sheets from MaterialCSS which is included at the top of the header.html
 [http://materializecss.com/getting-started.html](http://materializecss.com/getting-started.html) 
