@@ -6,7 +6,7 @@
     <meta name="description" content="Template for all websites rolled about by Lift Off">
     <meta name="author" content="Rishabh Parekh (rishabhparekh@github.com) and friends">
 
-    <title>Here is there the header of the website will go</title>
+    <title>{{.Site.Params.brand}}</title>
 
     <!-- Bootstrap core CSS -->
     <link href="{{.Site.BaseURL}}/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
     <link href='//fonts.googleapis.com/css?family=Arbutus+Slab%7CCabin:600%7CSource+Code+Pro' rel='stylesheet' type='text/css'>
+
     <!-- Add custom CSS here -->
     <link href="/css/f9.css" rel="stylesheet">
     <link href="/css/HPstyles.css" rel="stylesheet">
@@ -55,22 +56,22 @@
         <!--https://design.google.com/icons/ -->
         <!--
         <a href="#about" class="btn btn-primary btn-lg">About Us <i class="material-icons">account_balance</i></a>
-        <a href="#action" class="btn btn-primary btn-lg">Products <i class="material-icons">account_box</i></a>
+        <a href="#products" class="btn btn-primary btn-lg">Products <i class="material-icons">account_box</i></a>
         <a href="#approach" class="btn btn-info btn-lg">Approach <i class="material-icons">account_circle</i></a>
         <a href="#customers" class="btn btn-info btn-lg">Customers <i class="material-icons">favorite_border</i></a>
         <a href="#team" class="btn btn-dark btn-lg">Team <i class="large material-icons">face</i></a>
         <a href="#contact" class="btn btn-dark btn-lg">Contact <i class="material-icons">group</i></a>
-        <a href="https://github.com/spf13/hugo" class="btn btn-dark btn-lg">Blog <i class="material-icons">info</i></a>
+        <a href="#blog" class="btn btn-dark btn-lg">Blog <i class="material-icons">info</i></a>
         <!--- End Google Buttons -->
 
         <!-- All Hugo Style Icon Buttons -->
         <a href="#about" class="btn btn-dark btn-lg">About Us <i class="icon-idea"></i></a>
-        <a href="#action" class="btn btn-dark btn-lg">Products <i class="icon-arrow-down"></i></a>
+        <a href="#products" class="btn btn-dark btn-lg">Products <i class="icon-arrow-down"></i></a>
         <a href="#approach" class="btn btn-dark btn-lg">Approach <i class="icon-rocket2"></i></a>
         <a href="#customers" class="btn btn-dark btn-lg">Customers <i class="icon-talking"></i></a>
         <a href="#team" class="btn btn-dark btn-lg">Team <i class="icon-circlestar"></i></a>
         <a href="#contact" class="btn btn-dark btn-lg">Contact <i class="icon-circlestar"></i></a>
-        <a href="https://" class="btn btn-dark btn-lg">Blog <i class="icon-circlestar"></i></a>
+        <a href="#blog" class="btn btn-dark btn-lg">Blog <i class="icon-circlestar"></i></a>
 
         <!--- End Hugo Buttons -->
     </div>
