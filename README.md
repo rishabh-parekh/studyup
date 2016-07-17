@@ -523,5 +523,7 @@ You are ready to kick start you website.
 
 Open the browser and bring up the AWS_S3_BUCKET_URL
 
+    `http://f9lo.s3-website-us-east-1.amazonaws.com/`
+
 You can give a proper domain name using the instructions here
 [https://docs.aws.amazon.com/AmazonS3/latest/dev/website-hosting-custom-domain-walkthrough.html#website-hosting-custom-domain-walkthrough-domain-registry] (https://docs.aws.amazon.com/AmazonS3/latest/dev/website-hosting-custom-domain-walkthrough.html#website-hosting-custom-domain-walkthrough-domain-registry)
