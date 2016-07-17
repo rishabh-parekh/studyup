@@ -112,21 +112,51 @@ This is configured in the layouts/partials/header.html file
             <a href="#intro"><img src="{{.Site.BaseURL}}/img/{{.Site.Params.customer}}.png" class="logo" alt="logo"> </a>
          {{end}}
 
-Let's say you customer name is petstore (all lowercase). Create a logo file `petstore.png` and drop it in the `img` folder
+Let's say your customer name is petstore (all lowercase). Create a logo file `petstore.png` and drop it in the `img` folder
 
 Similarly all images from the customer which are going to be used throughout the content will be stored in the `img` folder (more later when we build the content)
 
 
 ### Step 6: Change the Top Level Menu
 
-The top level menu is configured in the `layout/partials/header.html`
+The top level menus are configured in the `layout/partials/header.html`
+The menus in the template are `about`, `products`, `approach`, `customers`, `team`, `contact`, `blog`
+You can add new menus, delete menus, or change existing existing. 
 
-### Step 8: Change the Rest of Header
+Each menu has icons. By default the Hugo Icons which are configured in layout/css/hugofont.css
+You can use Google Icons from the [Google Material Icons](https://design.google.com/icons/)
+Uncomment the Menu using Google Style Icons, and comment out Menus using Hugo Style Icon.
 
+The Google Icons use Style Sheets from MaterialCSS which is included at the top of the header.html
+[http://materializecss.com/getting-started.html](http://materializecss.com/getting-started.html) 
+
+
+        <!-- All Google Style Icon Buttons -->
+        <!--https://design.google.com/icons/ -->
+        <!--
+        <a href="#about" class="btn btn-primary btn-lg">About Us <i class="material-icons">account_balance</i></a>
+        <a href="#products" class="btn btn-primary btn-lg">Products <i class="material-icons">account_box</i></a>
+        <a href="#approach" class="btn btn-info btn-lg">Approach <i class="material-icons">account_circle</i></a>
+        <a href="#customers" class="btn btn-info btn-lg">Customers <i class="material-icons">favorite_border</i></a>
+        <a href="#team" class="btn btn-dark btn-lg">Team <i class="large material-icons">face</i></a>
+        <a href="#contact" class="btn btn-dark btn-lg">Contact <i class="material-icons">group</i></a>
+        <a href="#blog" class="btn btn-dark btn-lg">Blog <i class="material-icons">info</i></a>
+        <!--- End Google Buttons -->
+
+        <!-- All Hugo Style Icon Buttons -->
+        <a href="#about" class="btn btn-dark btn-lg">About Us <i class="icon-idea"></i></a>
+        <a href="#products" class="btn btn-dark btn-lg">Products <i class="icon-arrow-down"></i></a>
+        <a href="#approach" class="btn btn-dark btn-lg">Approach <i class="icon-rocket2"></i></a>
+        <a href="#customers" class="btn btn-dark btn-lg">Customers <i class="icon-talking"></i></a>
+        <a href="#team" class="btn btn-dark btn-lg">Team <i class="icon-circlestar"></i></a>
+        <a href="#contact" class="btn btn-dark btn-lg">Contact <i class="icon-circlestar"></i></a>
+        <a href="#blog" class="btn btn-dark btn-lg">Blog <i class="icon-circlestar"></i></a>
+
+
+### Step 7: Change the Rest of Header
 The header is configured in the `layout/partials/header.html`
 
-### Step 7: Change the Footer
-
+### Step 8: Change the Footer
 The footer is configured in the `layout/partials/footer.html`
 Here you can add the twitter, github, facebook, instagram, snapchat social media icons 
 
