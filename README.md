@@ -489,7 +489,7 @@ Create a new s3 bucket at [https://console.aws.amazon.com/s3/home?region=us-east
 
 Name the new s3 bucket the same name as the site you want launch
 
-<img src="/img/internal/aws-1.png" alt="AWS Config" style="width: 100%;"/>
+<img src="static/img/internal/aws-1.png" alt="AWS Config" style="width: 100%;"/>
 
 
 ### Step 15: Change the Wercker Config to deploy it automatically
@@ -514,7 +514,7 @@ This wercker file takes the Environment variables defined in the Wercker Project
 
 The three AWS parameters in the Wercker Environment Variables. `AWS_ACCESS_S3_KEY_ID,AWS_ACCESS_S3_KEY_SECRET,AWS_S3_BUCKET_URL`
 
-<img src="/img/internal/wercker-1.png" alt="Wercker Config" style="width: 100%;"/>
+<img src="static/img/internal/wercker-1.png" alt="Wercker Config" style="width: 100%;"/>
 
 
 ### Step 18: Kick start and watch you website
