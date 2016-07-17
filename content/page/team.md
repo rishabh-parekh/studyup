@@ -5,7 +5,13 @@ date = "2016-03-15T16:23:23+09:00"
 title = "Team"
 type = "Team"
 weight = 1
+
+icon = "icon-rocket"
+affiliatelink = "http://www.my-book-link.here"
+recommendedby = "my Mother"
+
 +++
+
 
 Hugo is designed to work how you do.
 Organize your content however you want with any URL structure.

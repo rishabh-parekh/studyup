@@ -1,13 +1,17 @@
 {{ $baseurl := .Site.BaseURL }}
 {{ range where .Data.Pages "Type"  "Products" }}
-<div id="products" class="point">
+<div id="{{ .Type }}" class="point">
   <div class="container">
     <div class="row">
-      <div class="col-md-6 col-md-offset-3 text-center">
-          <i class="point-icon icon-tux"></i>
-          <i class="point-icon icon-apple"></i>
-          <i class="point-icon icon-windows8"></i>
-        <h2>{{ .Title }}</h2>
+      <i class="point-icon {{ .Params.icon1 }}"></i>
+      <i class="point-icon {{ .Params.icon2 }}"></i>
+      <i class="point-icon {{ .Params.icon3 }}"></i>
+    </div>
+    <h2>{{ .Title }}</h2>
+
+    <div class="row">
+      <div class="col-md-4 "><img src="/img/{{ .Params.image }}" alt="Product" style="width: 100%;"/></div>
+      <div class="col-md-4 col-md-offset-3 text-center">
         <div class="lead">
           {{ .Content }}
         </div>

@@ -209,11 +209,21 @@ For e.g. here is the approach.html partial which filters and applies the style s
 
       {{ $baseurl := .Site.BaseURL }}
       {{ range where .Data.Pages "Type"  "Approach" }}
-      <div id="approach" class="counterpoint">
+      {{ partial "counterpoint.html" .}}
+
+      {{ end }}
+
+
+The partial `counterpoint.html` renders the content in black with white background. The partial `point.html` will render the content in white with green background. The icons and other parameters can be provided in the Front matter and the template will use them as `Params.icon`
+
+
+      {{ $baseurl := .Site.BaseURL }}
+      <div id="{{ .Type }}" class="counterpoint">
         <div class="container">
           <div class="row">
             <div class="col-md-6 col-md-offset-3 text-center">
-                <i class="lead-icon icon-rocket"></i>
+              <i class="lead-icon {{ .Params.icon }}"></i>
+
               <h2>{{ .Title }}</h2>
               <div class="lead">
                 {{ .Content }}
@@ -222,7 +232,6 @@ For e.g. here is the approach.html partial which filters and applies the style s
           </div>
         </div>
       </div>
-      {{ end }}
 
 
 In order to add new content under the content directory, use the hugo command
@@ -237,34 +246,216 @@ This will create new contents which can be pages, posts or any section you want 
 
 For example: I want to use the partial `layouts/partials/approach.html` for my post po1.md
 
-Edit the po1.md Front matter and change the type = "Approach"
+Edit the po1.md Front matter and change the type = "Approach" and provide the icon you would like to use.
 
 
       +++
-      Categories = ["Posts","Blogs"]
-      Tags = ["events"]
+      Categories = ["Post"]
+      Tags = ["registration"]
       date = "2016-03-15T16:23:23+09:00"
       title = "Fast &amp; Powerful"
       type = "Approach"
       weight = 1
+
+
+      icon = "icon-rocket"
+      affiliatelink = "http://www.my-book-link.here"
+      recommendedby = "my Mother"
+
       +++
 
-      Write you markdown content here....
+      Hugo is written for speed and performance. Great care has been
+      taken to ensure that Hugo build time is as short as possible.
+      We’re talking milliseconds to build your entire site for most setups.
 
+The Hugo template generator will automatically use the approach.html template to render this.
 
+Include this as partials in `index.html` as
+
+    {{ partial "po1.html" .}}
 
 You can duplicate new partials or modify existing partials and change the `type`
 
 
 ### Step 10: Change the Icons
 
+Icons are fonts, and this template uses variety of font icons. The corresponding CSS files and (Javascript) files are already included in the header.html
 
-### Step 11: Change the Theme/Colors
+1. Bootstrap fonts
+2. Font Awesome
+3. Google Material fonts
+4. Hugo Fonts (default)
 
-### Step 12: Change the Wercker.yml to deploy it automatically
 
-### Step 13: Add the new site to Git
+In order to use any of the font icons, you have to specify which font you are using in the specific HTML tag.
 
-### Step 14: Create a Wercker App and Target
+Icons can be passed as parameters to partials using the Front Matter of the Markdown content. And they can be used within the template.
 
-### Step 15: Kick start and watch you website
+Here is an example of Params.icon being passed to point.html params. Any content page which uses this partial will have to provide the Param icon in the front matter.
+
+    <i class="lead-icon {{ .Params.icon }}"></i>
+
+
+e.g. Hugo fonts
+     icon-rocket, icon-octocat etc are icons from the hugofont.css file in the static/css/ folder.
+
+e.g. Bootstrap Fonts
+
+    [http://getbootstrap.com/components/](http://getbootstrap.com/components/)
+
+    Bootstrap fonts have to be in `span` html component. The Bootstrap font css is included in the header.html
+
+    <button type="button" class="btn btn-default" aria-label="Left Align">
+      <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+    </button>
+
+e.g. Google Material fonts and MaterialCSS
+
+    Google Material Fonts [https://design.google.com/icons/](https://design.google.com/icons/) are based on Material design. But to use different colors and sizes, you have to use the MaterialCSS from [http://materializecss.com/](http://materializecss.com/)
+
+    The header.html has already includes for both the Google Material Fonts and MaterialCSS
+
+    <!-- IF you are using Google Icons the use the following two stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- MaterialCSS -->
+    <link href="{{.Site.BaseURL}}/css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="{{.Site.BaseURL}}/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+    To use the material fonts and css, here is an example using the menu items. This is commented in the header.html
+
+    <a href="#about" class="btn btn-primary btn-lg">About Us <i class="material-icons">account_balance</i></a>
+    <a href="#products" class="btn btn-primary btn-lg">Products <i class="material-icons">account_box</i></a>
+    <a href="#approach" class="btn btn-info btn-lg">Approach <i class="material-icons">account_circle</i></a>
+    <a href="#customers" class="btn btn-info btn-lg">Customers <i class="material-icons">favorite_border</i></a>
+    <a href="#team" class="btn btn-dark btn-lg">Team <i class="large material-icons">face</i></a>
+    <a href="#contact" class="btn btn-dark btn-lg">Contact <i class="material-icons">group</i></a>
+    <a href="#blog" class="btn btn-dark btn-lg">Blog <i class="material-icons">info</i></a>
+    <!--- End Google Buttons -->
+
+
+
+e.g. Font Awesome fonts
+
+    <!-- If you are using Font Awesome Fonts -->
+    <script src="https://use.fontawesome.com/06e55527a5.js"></script>
+
+If you want to use a specific font e.g. Facebook Icon, and it is not available in Hugo font, but available in Font Awesome, the you can use the font awesome font e.g.
+
+      <li><a href="https://twitter.com/{{.Site.Params.twitter}}" class="icon-twitter icon-2x"></a></li>
+      <li><a href="https://github.com/{{.Site.Params.github}}" class="icon-octocat icon-2x"></a></li>
+      <li><a href="https://github.com/{{.Site.Params.facebook}}"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
+
+
+### Step 11: Add content with Images layouts
+
+In this template if you want to create a layout with side by side Image and content, you can use the partials
+image.html
+
+    {{ range where .Data.Pages "Type"  "SometypeOfPage" }}
+      {{ {{ partial "image.html" . }}
+    {{ end }}
+
+Similar logic is used in the `products.html`. In the Markdown products.md, you have to specify the image to be used
+
+    +++
+    Categories = ["registration","workshop"]
+    Tags = ["registration"]
+    date = "2016-03-15T16:23:23+09:00"
+    title = "Products"
+    type = "Products"
+    weight = 1
+    image = "product.png"
+
+The template will render two columns, one on the left with the image and the right with the content
+
+      <div id="{{ .Type }}" class="point">
+        <div class="container">
+          <div class="row">
+            <i class="point-icon {{ .Params.icon }}"></i>
+          </div>
+          <h2>{{ .Title }}</h2>
+          <div class="row">
+            <div class="col-md-4 "><img src="/img/{{ .Params.image }}" alt="{{ .Type }}" style="width: 100%;"/></div>
+            <div class="col-md-4 col-md-offset-3 text-center">
+              <div class="lead">
+                {{ .Content }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+
+### Step 12: Add content with Blog Post and Detailed Pages
+
+The partials blog.html renders cards which are posts of the same type e.g. blogs in this case. You can use this example to render bunch of cards for similar content, events, blog posts etc. The details are provided by clicking on the blog
+
+There is pagination built in the page.
+
+
+      {{ $baseurl := .Site.BaseURL }}
+      <div id="blog" class="point">
+        <div class="container">
+          <div class="section">
+            <div class="row">
+                {{ range where .Data.Pages "Type"  "blog" }}
+                <div class="col s6">
+                  <div class="card-panel hoverable blue-grey darken-1">
+                    <div class="card-content white-text">
+                      <!-- Card Content -->
+                      <h4><a href="{{ .Permalink }}">{{ .Title }}</a></h4>
+                      <p>{{ .Summary }}</p>
+                      <p>
+                      {{if .Params.tags }}
+                        {{ range $index, $tag := .Params.tags }}
+                          <a href="{{$baseurl}}/tags/{{ $tag | urlize }}/">#{{ $tag }}</a>
+                        {{ end }}
+                      {{end}}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                {{ end }}
+            </div>
+            {{ partial "pagination.html" .Paginator }}
+          </div>
+        </div>
+      </div>
+
+
+### Step 13: Add Shortcodes for Youtube, Google Maps, Google Slides.
+
+A shortcode is a simple snippet inside a content file that Hugo will render using a predefined template.
+
+Example short codes include in the template are `youtube` `speakerdeck` `googleslides` `googlemaps`
+
+In order to use the short code, simply call the shortcode with the parameter
+
+e.g.
+
+{{< googlemaps "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d188704.9092281745!2d-83.23929000800298!3d42.35287957603575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824ca0110cb1d75%3A0x5776864e35b9c4d2!2sDetroit%2C+MI!5e0!3m2!1sen!2sus!4v1468784710190" >}}
+
+
+
+### Step 14: Change the Theme/Colors
+
+Themes and Colors are provided in the CSS included in the template. You can change the themes, by adding new styles in the css folder or specifying new styles for existing style.css
+
+
+Use the Chrome Developer Tools to see what is the style being applied on a particular element and then change it.
+
+You can download new themes for Hugo from [http://themes.gohugo.io/] (http://themes.gohugo.io/) and follow the instructions to apply the themes.
+
+
+### Step 16: Add the new site to Git
+
+The next step is to publish your website. You can save you website to Git Source control.
+
+
+### Step 17: Create a Wercker App and Target
+
+### Step 15: Change the Wercker.yml to deploy it automatically
+
+
+### Step 18: Kick start and watch you website

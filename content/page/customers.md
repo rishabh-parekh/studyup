@@ -5,6 +5,12 @@ date = "2016-03-15T16:23:23+09:00"
 title = "Customers"
 type = "Customers"
 weight = 1
+
+
+icon = "icon-fork"
+affiliatelink = "http://www.my-book-link.here"
+recommendedby = "my Mother"
+
 +++
 
 Hugo is designed to work how you do.
