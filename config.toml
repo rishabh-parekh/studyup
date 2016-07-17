@@ -1,5 +1,5 @@
 title = "The classroom that is always open"
-baseurl = "http://f9liftoff.io/"
+baseurl = "http://f9lo.s3-website-us-east-1.amazonaws.com"
 MetaDataFormat = "toml"
 paginate = 9 # To specify a multiple of 3
 disqusShortname = "" # optional
