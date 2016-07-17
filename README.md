@@ -154,10 +154,13 @@ The Google Icons use Style Sheets from MaterialCSS which is included at the top 
 
 ### Step 7: Change the Rest of Header
 The header is configured in the `layout/partials/header.html`
+By default we have include multiple CSS from bootstrap, materializecss. You can also include custom CSS and Javascript files here.
+
 
 ### Step 8: Change the Footer
 The footer is configured in the `layout/partials/footer.html`
-Here you can add the twitter, github, facebook, instagram, snapchat social media icons
+Here you can add the twitter, github, facebook, instagram, snapchat social media icons.
+
 You can use Font Awesome [http://fontawesome.io/examples/](http://fontawesome.io/examples/) which has all the social media icons like Facebook or you can use Hugo Icons for twitter and Github. The Font Awesome CSS is already included in the header.html
 
 
@@ -175,6 +178,53 @@ Edit the config.toml to add social media handles
 
 ### Step 9: Change and Add new content
 
+Hugo uses Markdown content and applies templates based on rules you have defined for rendering the markdown.
+
+In this template, we have used partials for different `type` of markdown content and included the partials in `index.html` to render the complete page.
+
+The `index.html` has all the different partials .. Here is a snippet.
+Any page which matches a particular partial will be rendered at the position. For e.g. If I have a content of type `approach` it will be rendered by approach.html
+
+
+      {{ partial "header.html" . }}
+
+          <div id="main">
+              <!-- Intro -->
+              {{ partial "home.html" .}}
+              <!-- /Intro -->
+
+              <!-- Point -->
+              {{ partial "products.html" .}}
+
+              <!-- /Point -->
+
+              <!-- Point -->
+              {{ partial "approach.html" .}}
+
+              <!-- /Point -->
+
+The partials have rules which file the site content using the `type` Front matter
+
+For e.g. here is the approach.html partial which filters and applies the style sheet only for `.Data.Pages` of `Type` equals `Approach`
+
+      {{ $baseurl := .Site.BaseURL }}
+      {{ range where .Data.Pages "Type"  "Approach" }}
+      <div id="approach" class="counterpoint">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <i class="lead-icon icon-rocket"></i>
+              <h2>{{ .Title }}</h2>
+              <div class="lead">
+                {{ .Content }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {{ end }}
+
+
 In order to add new content under the content directory, use the hugo command
 
     hugo new page/p1.md
@@ -182,10 +232,32 @@ In order to add new content under the content directory, use the hugo command
 
     hugo new post/po1.md
     hugo new post/po2.md
-    
+
+This will create new contents which can be pages, posts or any section you want to define. You will have to edit the front matter for each of the page to match the appropriate `partials`.
+
+For example: I want to use the partial `layouts/partials/approach.html` for my post po1.md
+
+Edit the po1.md Front matter and change the type = "Approach"
+
+
+      +++
+      Categories = ["Posts","Blogs"]
+      Tags = ["events"]
+      date = "2016-03-15T16:23:23+09:00"
+      title = "Fast &amp; Powerful"
+      type = "Approach"
+      weight = 1
+      +++
+
+      Write you markdown content here....
+
+
+
+You can duplicate new partials or modify existing partials and change the `type`
 
 
 ### Step 10: Change the Icons
+
 
 ### Step 11: Change the Theme/Colors
 
