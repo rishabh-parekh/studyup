@@ -26,6 +26,7 @@ theme="material-design"
     description = "Lift Off Your Web and Social Media" # optional
     twitter = "f9lo" # optional
     github = "f9lo"
+    facebook = "f9lo"
     customer = "lologo"
     customerName = "Lift Off"
     # headerCover = "images/headerCover.png" # optional
