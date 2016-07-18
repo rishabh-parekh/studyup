@@ -56,13 +56,15 @@ The site specific layouts are stored in the layout folder. But you can use Theme
 
 ### Step 2 Start the Hugo Server to serve the website
 
-Let's start the local site from a **terminal** window
-In the site-1 folder in the terminal window type
+Let's start the local site from a **terminal** window. In the site-1 folder in the terminal window type:
+
 
       $hugo serve
 
 This will start you site and you can go ahead open a browser window to `http://localhost:1313`
 
+
+<img src="static/img/internal/s1.png" alt="Hugo " style="width: 100%;"/>
 
 ### Step 3: Change the config.toml
 
@@ -272,7 +274,7 @@ The Hugo template generator will automatically use the approach.html template to
 
 Include this as partials in `index.html` as
 
-    {{ partial "po1.html" .}}
+    {{ partial "approach.html" .}}
 
 You can duplicate new partials or modify existing partials and change the `type`
 
@@ -436,6 +438,7 @@ e.g.
 
 {{< googlemaps "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d188704.9092281745!2d-83.23929000800298!3d42.35287957603575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8824ca0110cb1d75%3A0x5776864e35b9c4d2!2sDetroit%2C+MI!5e0!3m2!1sen!2sus!4v1468784710190" >}}
 
+{{< youtube "https://youtu.be/v-uBXZ3CY6Q"}}
 
 
 ### Step 14: Change the Theme/Colors
@@ -448,7 +451,7 @@ Use the Chrome Developer Tools to see what is the style being applied on a parti
 You can download new themes for Hugo from [http://themes.gohugo.io/] (http://themes.gohugo.io/) and follow the instructions to apply the themes.
 
 
-### Step 16: Add the new site to Git
+### Step 15: Add the new site to Git
 
 The next step is to publish your website. You can save you website to Git Source control.
 
@@ -466,7 +469,7 @@ Next, add these changes to the new repo
 This will add all the files under user name rishabh-parekh/site-1
 
 
-### Step 17: Create a Wercker App and Target
+### Step 16: Create a Wercker App and Target
 
 The next step is to build this final site and deploy it automatically if any content changes.
 
@@ -481,7 +484,7 @@ Login to the wercker dashboard and create a new app [https://app.wercker.com/#ap
 
 Wercker will guide you through the steps, of auto configuration. Use the defaults for checking out the code.
 
-### Step 18: Create a AWS S3 bucket to host your website
+### Step 17: Create a AWS S3 bucket to host your website
 
 Login to AWS Console [https://console.aws.amazon.com](https://console.aws.amazon.com)
 
@@ -492,7 +495,7 @@ Name the new s3 bucket the same name as the site you want launch
 <img src="static/img/internal/aws-1.png" alt="AWS Config" style="width: 100%;"/>
 
 
-### Step 15: Change the Wercker Config to deploy it automatically
+### Step 18: Change the Wercker Config to deploy it automatically
 We have a wercker.yml file already included in the template repository.
 
       box: debian
@@ -517,7 +520,7 @@ The three AWS parameters in the Wercker Environment Variables. `AWS_ACCESS_S3_KE
 <img src="static/img/internal/wercker-1.png" alt="Wercker Config" style="width: 100%;"/>
 
 
-### Step 18: Kick start and watch you website
+### Step 19: Kick start and watch you website
 
 You are ready to kick start you website.
 
