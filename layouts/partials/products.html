@@ -3,17 +3,33 @@
 <div id="{{ .Type }}" class="point">
   <div class="container">
     <div class="row">
-      <i class="point-icon {{ .Params.icon1 }}"></i>
-      <i class="point-icon {{ .Params.icon2 }}"></i>
-      <i class="point-icon {{ .Params.icon3 }}"></i>
+      <h1 class="h1 text-center">{{ .Title }}</h1>
     </div>
-    <h2>{{ .Title }}</h2>
-
     <div class="row">
-      <div class="col-md-4 "><img src="/img/{{ .Params.image }}" alt="Product" style="width: 100%;"/></div>
-      <div class="col-md-4 col-md-offset-3 text-center">
+      <div class="col-md-4 text-center"><h2>{{ .Params.title1 }}</h2></i></div>
+      <div class="col-md-4 text-center"><h2>{{ .Params.title2 }}</h2></i></div>
+      <div class="col-md-4 text-center"><h2>{{ .Params.title3 }}</h2></i></div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 text-center"><i class="fa {{ .Params.icon1 }} fa-5x" aria-hidden="true"></i></div>
+      <div class="col-md-4 text-center"><i class="fa {{ .Params.icon2 }} fa-5x" aria-hidden="true"></i></div>
+      <div class="col-md-4 text-center"><i class="fa {{ .Params.icon3 }} fa-5x" aria-hidden="true"></i></div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-4 text-center">
         <div class="lead">
-          {{ .Content }}
+          {{ .Params.content1 }}
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="lead">
+          {{ .Params.content2 }}
+        </div>
+      </div>
+      <div class="col-md-4 text-center">
+        <div class="lead">
+          {{ .Params.content3 }}
         </div>
       </div>
     </div>

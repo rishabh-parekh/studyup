@@ -8,58 +8,25 @@
 
                     <li><a href="https://twitter.com/{{.Site.Params.twitter}}" class="icon-twitter icon-2x"></a></li>
                     <li><a href="https://github.com/{{.Site.Params.github}}" class="icon-octocat icon-2x"></a></li>
-                    <li><a href="https://github.com/{{.Site.Params.facebook}}"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
+                    <li><a href="https://facebook.com/{{.Site.Params.facebook}}"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a></li>
 
                 </ul>
                 <hr>
-                <p>Copyright &copy; {{.Site.Params.customerName}} 2016</p>
+                <p>Copyright &copy; {{ .Now.Format "2006" }} {{.Site.Params.customerName}} </p>
               </div>
             </div>
           </div>
         </footer>
     <!-- /Footer -->
 
-  <!-- Bootstrap core JavaScript -->
   <!-- Placed at the end of the document so the pages load faster -->
-  <script src="/js/jquery-2.1.4.min.js"></script>
-  <script src="/js/owl.carousel.min.js"></script>
-  <!--<script src="/js/bootstrap.min.js"></script>-->
-  <script>
-    $(function() {
-        $('a[href*=#]:not([href=#])').click(function() {
-          if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
-              || location.hostname == this.hostname) {
 
-            var target = $(this.hash);
-            target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-            if (target.length) {
-              $('html,body').animate({
-                scrollTop: target.offset().top
-              }, 1000);
-              return false;
-            }
-          }
-        });
-      });
-    $('.owl-carousel').owlCarousel({
-        loop:true,
-        margin:10,
-        nav:true,
-        autoplay:true,
-        autoplayHoverPause:true,
-        autoplayTimeout:3000,
-        responsive:{
-            0:{
-                items:1
-            },
-            1000:{
-                items:3
-            },
-        }
-    })
-    </script>
-
+  <!-- If you are using Font Awesome Fonts -->
+  <script src="https://use.fontawesome.com/06e55527a5.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     {{ template "partials/analytics.html" . }}
   </body>
-
 </html>

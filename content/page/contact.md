@@ -8,9 +8,8 @@ weight = 1
 
 
 icon = "icon-octocat"
-affiliatelink = "http://www.my-book-link.here"
-recommendedby = "my Mother"
+
 
 +++
 
-Hugo is open source and completely free. Feel free to contact us
+Please drop us an email at info@studyup.io and we will get back to you.

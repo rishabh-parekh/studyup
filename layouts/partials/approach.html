@@ -1,5 +1,59 @@
 {{ $baseurl := .Site.BaseURL }}
 {{ range where .Data.Pages "Type"  "Approach" }}
-{{ partial "counterpoint.html" .}}
-
+<div id="{{ .Type }}" class="steelpoint">
+  <div class="container">
+    <div class="col-md-6 col-md-offset-3 text-center">
+      <i class="point-icon {{ .Params.icon }}"></i>
+      <h1 class="h1 text-center">{{ .Title }}</h1>
+      <br>
+    </div>
+    <div class="row">
+       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6"><img src="/img/{{ .Params.image }}" alt="Product" style="width: 100%;"/></div>
+       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="padding:0px">
+         <div class="short-div" >
+           <span class="fa-stack fa-3x">
+             <i class="fa fa-circle-thin fa-stack-2x"></i>
+             <i class="fa fa-stack-1x" >1</i>
+           </span>
+           <div class="lead">
+             <br>
+             {{ .Params.step1 }}
+           </div>
+         </div>
+         <div class="short-div">
+           <span class="fa-stack fa-3x">
+             <i class="fa fa-circle-thin fa-stack-2x"></i>
+             <i class="fa fa-stack-1x">2</i>
+           </span>
+           <div class="lead">
+             <br>
+             {{ .Params.step2 }}
+           </div>
+         </div>
+       </div>
+       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" style="padding:0px">
+         <div class="short-div">
+           <span class="fa-stack fa-3x">
+             <i class="fa fa-circle-thin fa-stack-2x"></i>
+             <i class="fa fa-stack-1x">3</i>
+           </span>
+           <div class="lead">
+             <br>
+             {{ .Params.step3 }}
+           </div>
+         </div>
+         <div class="short-div" >
+           <span class="fa-stack fa-3x">
+             <i class="fa fa-circle-thin fa-stack-2x"></i>
+             <i class="fa fa-stack-1x">4</i>
+           </span>
+           <div class="lead">
+             <br>
+             {{ .Params.step4 }}
+           </div>
+         </div>
+       </div>
+     </div>
+   </div>
+</div>
 {{ end }}

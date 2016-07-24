@@ -2,17 +2,16 @@
 Categories = ["registration","workshop"]
 Tags = ["registration"]
 date = "2016-03-15T16:23:23+09:00"
-title = "Fast &amp; Powerful"
+title = "How does StudyUp work?"
 type = "Approach"
 weight = 1
 
 
 icon = "icon-rocket"
-affiliatelink = "http://www.my-book-link.here"
-recommendedby = "my Mother"
+image = "product.png"
 
+step1 = "Download app and register"
+step2 = "Based on your schedule book a study session with a tutor up to 15 min in advance"
+step3 = "After the session, reflect and rate your experience with your tutor"
+step4 = "Receive feedback from the tutor about your lesson on your portfolio"
 +++
-
-Hugo is written for speed and performance. Great care has been
-taken to ensure that Hugo build time is as short as possible.
-We’re talking milliseconds to build your entire site for most setups.

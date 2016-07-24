@@ -8,12 +8,20 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cabin', "Helvetica Neue", "Helvetica", sans-serif;
+    font-family: 'Harmattan', "Helvetica Neue", "Helvetica", sans-serif;
+    font-weight: 400
+}
+
+h1 {
+  letter-spacing: .045em
+}
+
+h2, h2 .eyebrow {
+    letter-spacing: .02em;
 }
 
 body {
-
-    font-family: 'Arbutus Slab', "Helvetica Neue", "Helvetica", sans-serif !important;
+    font-family: 'Lato', sans-serif;
     line-height: 1.6;
 }
 
@@ -28,11 +36,11 @@ body {
 
 .header {
     display: table;
-    height: 70%;
+    height: 100%;
     width: 100%;
-    min-height: 70%;
+    min-height: 100%;
     position: relative;
-    background: url(../img/f9-1.jpg) no-repeat center center fixed;
+    background: url(../img/b8.png) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -45,6 +53,10 @@ body {
     max-width: 35em;
     width: 100%;
     padding: 2em;
+}
+
+.head-img {
+    height: 10em;
 }
 
 .buttonbox {
@@ -112,6 +124,12 @@ and (orientation : landscape) {
     color: #ffffff;
 }
 
+
+.steelpoint {
+    background: #2481a6;
+    padding: 50px 0;
+    color: #ffffff;
+}
 
 .point h2, .counterpoint h2 {
     font-size: 32pt;
@@ -211,7 +229,7 @@ i.callout-icon:hover {
 #footer {
     font-size: 14px;
     padding: 50px 0px 25px 0px;
-    background: rgb(255, 255, 255);
+    background: rgb(255, 252, 244);
 }
 
 .call-to-action .btn {

@@ -7,10 +7,9 @@ type = "Home"
 weight = 1
 
 
-icon = "icon-pacman"
-affiliatelink = "http://www.my-book-link.here"
-recommendedby = "my Mother"
+icon = "fa-bolt"
+
 
 +++
 
-F9LO is here to build your websites, fast and beautiful. Falcon 9 is a two-stage rocket designed and manufactured by SpaceX to LiftOff Dragon spacecraft. We at F9LO are here to lift off your current web presence, safely and reliably into the Orbit.
+StudyUP is brought to you by LiftOff Media LLC. We created StudyUP to meet the needs of On-Demand tutoring and to make tutoring flexible and affordable. We are also focusing on the community tutoring using StudyUP Circles.

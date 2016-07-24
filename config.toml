@@ -1,9 +1,9 @@
 title = "The classroom that is always open"
-baseurl = "http://f9lo.s3-website-us-east-1.amazonaws.com"
+baseurl = "http://studyup.s3-website-us-east-1.amazonaws.com"
 MetaDataFormat = "toml"
 paginate = 9 # To specify a multiple of 3
 disqusShortname = "" # optional
-copyright = "© Copyright 2016 F9LO, Inc. All Rights Reserved."
+copyright = "© Copyright 2016 StudyUp, Inc. All Rights Reserved."
 theme="material-design"
 
 #
@@ -11,9 +11,9 @@ theme="material-design"
 #
 [params]
     # You can use markdown here.
-    brand = "F9 LiftOff"
-    topline = "Get the Boost"
-    footline = "code with <i class='fa fa-heart'></i>"
+    brand = "StudyUp"
+    topline = "The classroom that is always open"
+    footline = "@ <i class='fa fa-heart'></i>"
 
     # Sidebar position
     # false, true, "left", "right"
@@ -23,17 +23,18 @@ theme="material-design"
     # Default (if omitted) is "Home".
     home = "Home"
 
-    description = "Lift Off Your Web and Social Media" # optional
-    twitter = "f9lo" # optional
-    github = "f9lo"
-    facebook = "f9lo"
-    customer = "lologo"
-    customerName = "Lift Off"
+    description = "StudyUp - The classroom that is always open" # optional
+    twitter = "rishparekh7" # optional
+    github = "rishabh-parekh"
+    facebook = "rishabhparekh00"
+    customer = "studyupw"
+    customerName = "Study Up"
     # headerCover = "images/headerCover.png" # optional
     # footerCover = "images/footerCover.png" # optional
     googleAnalyticsUserID = "UA-75133856-1" # optional
     tags = "cf"
-    author = "Name of the Author"
+    author = "Rishabh Parekh"
+    background = "b3"
 
 [permalinks]
   post = "/:year/:month/:day/:title/" # optional
