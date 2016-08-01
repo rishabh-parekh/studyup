@@ -11,7 +11,7 @@ firstslideimage = "img/mobile.png"
 firstslidecontent = "StudyUP is an on demand tutoring app which enables students access to tutors based on their schedule. Students face rigorous schedules that impact their overall classroom performance. <p> With StudyUP App, students can request tutors when they need them most - before tests and exams, or form study circles. StudyUp App improves classroom performance and collaboration with others.</p>"
 
 secondslidetitle = "Re-defining Tutoring"
-secondslideimage = "https://upload.wikimedia.org/wikipedia/commons/a/a0/Circle_-_black_simple.svg"
+secondslideimage = "img/tutors.png"
 secondslidecontent = "Booking a study session is easy! Set up a session with a tutor up to 15 minutes in advance at a library or Starbucks, unlike traditional tutoring agencies or private tutors which have fixed schedules. Most of study material from tutoring agencies is not personalized to address a specific test or exam, StudyUp addresses this by providing personal tutoring service"
 
 thirdslidetitle = "Community based"
