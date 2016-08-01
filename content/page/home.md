@@ -12,4 +12,4 @@ icon = "fa-bolt"
 
 +++
 
-StudyUP is brought to you by LiftOff Media LLC. We created StudyUP to meet the needs of On-Demand tutoring and to make tutoring flexible and affordable. We are also focusing on the community tutoring using StudyUP Circles.
+My name is Rishabh Parekh and I am a 16 year old student from West Bloomfield High School. I was inspired to create StudyUP through my experiences in High school. I realized many students, including myself face academic, work, and extracurricular challenges in school, and it impacted their school performance. This motivated me to create StudyUP, so I could make sure that learning has no limits and there is always a helping hand.

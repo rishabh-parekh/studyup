@@ -8,10 +8,10 @@ weight = 1
 
 
 icon = "icon-rocket"
-image = "product.png"
+image = "app.png"
 
-step1 = "Download app and register"
-step2 = "Based on your schedule book a study session with a tutor up to 15 min in advance"
-step3 = "After the session, reflect and rate your experience with your tutor"
-step4 = "Receive feedback from the tutor about your lesson on your portfolio"
+step1 = "Download the app and register."
+step2 = "Book a study session with a tutor up to 15 min in advance. Or you can create or join a study circle."
+step3 = "After the session, reflect and rate your experience with your tutor. Your rating makes the community better."
+step4 = "Receive feedback from the tutor about your lesson on your portfolio."
 +++
